@@ -1,7 +1,7 @@
 <p align="center"><a href="https://www.codechefvit.com" target="_blank"><img src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/logo-3.png" title="CodeChef-VIT" alt="Codechef-VIT"></a>
 </p>
 
-# Project Title
+# Free Slot Finder
 
 > <Subtitle>
 > Include project description here.
@@ -11,21 +11,21 @@
   [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
 
 ## Features
-- Insert list of features here
+- ML to detect free slots from timetable screenshot.
 
 ## Screenshots
 <img src="https://github.com/akshatvg/common-entry-test/raw/master/static/img/header.png" alt="Project Screenshots">
 
 ## Instructions to run
 ```
-$ git clone https://github.com/CodeChefVIT/<Project>
+$ git clone https://github.com/CodeChefVIT/Free-Slot-Finder-v2
 $ cd <Project>
 $ pip3 install -r requirements.txt
 $ python3 manage.py runserver
 ```
 
 ## Contributors
-- <a href="https://github.com/<Contributor>">Contributor Name</a>
+- <a href="https://github.com/VisheshBansal">Vishesh Bansal</a>
 - <a href="https://github.com/<Contributor>">Contributor Name</a>
 
 ## License
