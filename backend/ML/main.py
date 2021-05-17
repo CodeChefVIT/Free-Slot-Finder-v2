@@ -40,11 +40,5 @@ async def predict_api(file: UploadFile = File(...)):
     return data
 
 
-'''@app.post("/uploadtext/")
-async def get_timetable(request: str = Form(...)):
-    data = fetch_text_timetable(request)
-    return data'''
-
-
 if __name__ == "__main__":
     uvicorn.run(app, debug=True)

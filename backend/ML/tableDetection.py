@@ -12,11 +12,23 @@ def write_json(data, filename="data.json"):
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
 
-def fetch_data(img):
-    image = np.array(img)
+def fetch_data(image):
+    gray = []
+    print(image.shape)
+    for i in range(0, image.shape[0]):
+        ex = []
+        for j in range(0, image.shape[1]):
+            if 140 <= image[i][j][0] <= 255:
+                if 220 <= image[i][j][1] <= 255:
+                    if 239 <= image[i][j][2] <= 255:
+                        ex.append(True)
+                        continue
+            ex.append(False)
+        ex = np.asarray(ex)
+        gray.append(ex)
+    image = np.array(image)
     image = np.uint8(image)
-    gray = np.bitwise_or(image == (164,239,249), image == (204,255,255))
-    gray = np.all(gray!= (0,255,0),2)
+    gray = np.asarray(gray)
     gray = gray.astype(np.uint8) * 255
     blur = cv2.GaussianBlur(gray, (3, 3), 0)
     gray = cv2.threshold(blur, 140, 255, cv2.THRESH_BINARY)[1]
@@ -31,7 +43,8 @@ def fetch_data(img):
         cv2.rectangle(image, (x, y), (x + w, y + h), (0, 0, 255), 2)
         crop = gray[y: y + h, x: x + w]
         text = pt.image_to_string(crop)
-        if text == "-" or text == "\f":
+        text = text.strip("\n")
+        if text == "-" or text == "\f" or len(text)>5:
             continue
         else:
             text = fx(text)
