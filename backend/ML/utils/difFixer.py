@@ -1,8 +1,14 @@
+def rreplace(s, old, new, occurrence):
+    """Replace all occurrences except first"""
+    li = s.rsplit(old, occurrence)
+    return new.join(li)
+
 def fix_string(arg):
     """Heuristics for OCR"""
     arg = arg.upper()
     arg = arg.strip("\n\f")
     arg = arg.replace("g", "0")
+    arg = arg.replace("I", "1")
     arg = arg.replace("To", "TD")
     arg = arg.replace("£", "E")
     arg = arg.replace("s", "S")
